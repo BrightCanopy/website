@@ -342,15 +342,15 @@
 						type     : 'POST',
 						url      : action,
 						data     : $el.serialize() + '&ajax=1',
-						dataType : 'JSON',
+						dataType : 'JSONP',
 						success  : function( response ) {
 
 							// custom callback
 							$el.trigger( 'form-ajax-response', response );
-							
+
 							// error
-							if ( response.error ) {
-								$alert.html( response.message );
+							if ( response.status != 0 ) {
+								$alert.html( 'Please try a different email or contact <a href="http//help.brightcanopy.com">support@brightcanopy.com</a>' );
 								$alert.addClass( 'alert-danger' ).fadeIn( 500 );
 							}
 							// success
@@ -358,15 +358,20 @@
 								$el.trigger( 'reset' );
 								$alert.html( response.message );
 								$alert.addClass( 'alert-success' ).fadeIn( 500 );
+								if ( $el.is('[redirect-on-success]' ) ) {
+									window.location.replace( $el.attr('redirect-on-success') );
+								}
 							}
-
 							// reset button
-							$submit.button( 'reset' );
+							if ( $el.hasClass( 'form-reset' ) ) {
+								$submit.button( 'reset' );
+							};
 						},
 					})
 				});
 			};
 		});
+
 
 		/* =======================================
 		 * Preloader

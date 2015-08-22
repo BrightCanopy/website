@@ -121,7 +121,7 @@
 
 							
 							<!-- HEADER ACTION BUTTON -->
-							<li class="header-action-button"><a href="#" class="btn btn-primary">Run SL In Your Web Browser</a></li>
+							<li class="header-action-button"><a href="#register" class="btn btn-primary">Run SL In Your Web Browser</a></li>
 
 						</ul>
 
@@ -160,7 +160,7 @@
 									</div>
 
 									<p class="hero-buttons text-center">
-										<a href="#" class="btn btn-lg btn-primary">Run SL In Your Web Browser</a>
+										<a href="#register" class="btn btn-lg btn-primary">Run SL In Your Web Browser</a>
 									</p>
 
 								</div>
@@ -394,6 +394,76 @@
 
 			</section>
 
+			<!-- REGISTER SECTION
+			================================= -->
+			<section id="register" class="hero-section section section-dark">
+				<div class="section-background">
+
+					<!-- IMAGE BACKGROUND -->
+					<div class="section-background-image parallax" data-stellar-ratio="0.4">
+						<img src="images/backgrounds/hero-dreamer.jpg" style="opacity: 0.3;">
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="hero-content">
+						<div class="hero-content-inner">
+
+							<div class="hero-features row">
+
+								<div class="hero-features-right col-md-5 col-md-offset-3" data-animation="fadeIn">
+
+									<!-- FORM -->
+									<form name="hero" action="https://app.fra.me/api/create_launchpad_user" method="post" id="form" class="form form-ajax-submit" role="form" redirect-on-success="https://app.fra.me/launchpad/bright-canopy/login">
+
+										<h4 class="form-heading">Try It Now</h4>
+
+										<div class="form-validation alert"></div>
+
+										<div class="form-group">
+											<label for="form-first">First Name</label>
+											<input type="text" name="first_name" id="form-first" class="form-control" placeholder="Your First Name" autocomplete="off">
+										</div>
+
+										<div class="form-group">
+											<label for="form-first">Last Name</label>
+											<input type="text" name="last_name" id="form-last" class="form-control" placeholder="Your Last Name" autocomplete="off">
+										</div>
+
+										<div class="form-group">
+											<label for="form-email">Email Address</label>
+											<input type="email" name="email" id="form-email" class="form-control" placeholder="you@example.com" autocomplete="off">
+										</div>
+
+										<div class="form-group">
+											<label for="form-password">Password</label>
+											<input type="password" name="password" id="form-email" class="form-control" autocomplete="off">
+										</div>
+
+										<div class="form-group">
+											<label for="form-location">Closest City</label>
+											<select name="hash" id="form-location" class="form-control" placeholder="Your Location" autocomplete="off">
+												<option value="631ed6bec71718436e89e67aabfa954d">Dublin</option>
+												<!-- <option value="">New York</option> -->
+												<option value="601fc8374f8ddd7d4ff273e7f14a953b" selected>San Francisco</option>
+											</select>
+										</div>
+
+										<div class="form-group form-group-submit">
+											<button class="btn btn-primary btn-lg btn-block" data-loading-text="Please Try Again">Lemme In</button>
+										</div>
+									</form>
+
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</section>
+
 			<!-- PRICING SECTION
 			================================= -->
 			<section id="pricing" class="pricing-section section">
@@ -404,7 +474,7 @@
 
 					<div class="row text-center">
 						<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-							<p>The freedom of virtual worlds for everyone, everywhere at an affordable price. -- Our Mission</p>
+							<p>The freedom of virtual worlds for everyone, everywhere at an affordable price. -&nbsp;Our&nbsp;Mission</p>
 						</div>
 					</div>
 
@@ -414,7 +484,7 @@
 						<!-- PRICING PACKAGE 1 -->
 						<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-2" data-animation="fadeInUp">
 						  <a href="#">
-							<div class="pricing-package">
+							<div class="pricing-package pricing-package-featured">
 								<div class="pricing-package-header">
 									<h4 class="price-title">VISITOR</h4>
 									<div class="price">
@@ -422,6 +492,7 @@
 										<span class="price-number">0.013</span>
 									</div>
 									<div class="price-description">Per Minute</div>
+									<div class="price-featured"></div>
 								</div>
 								<ul class="pricing-package-items">
 								  <li>2 Hours Free</li>
@@ -447,7 +518,7 @@
 									<div class="price-featured">Most Popular</div>
 								</div>
 								<ul class="pricing-package-items">
-								  <li>Free Trial</li>
+								  <li>14 Day Trial</li>
 								  <li>Highest Graphics Settings</li>
 								  <li>No Contract or Obligation</li>
 								  <li>24/7 Customer Support</li>
@@ -664,7 +735,7 @@
 
 					<h3 class="closing-shout">Ready to start? Take the first step by clicking the button below</h3>
 
-					<div class="closing-buttons" data-animation="tada"><a href="#hero" class="anchor-link btn btn-lg btn-primary">Run SL In Your Web Browser</a></div>
+					<div class="closing-buttons" data-animation="tada"><a href="#register" class="anchor-link btn btn-lg btn-primary">Run SL In Your Web Browser</a></div>
 
 				</div>
 
