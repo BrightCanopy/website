@@ -350,7 +350,7 @@
 
 							// error
 							if ( response.status != 0 ) {
-								$alert.html( 'Please try a different email or contact <a href="http//help.brightcanopy.com">support@brightcanopy.com</a>' );
+								$alert.html( 'Email already used. Please try a different email or contact us at <a href="http//help.brightcanopy.com">support@brightcanopy.com</a>' );
 								$alert.addClass( 'alert-danger' ).fadeIn( 500 );
 							}
 							// success
