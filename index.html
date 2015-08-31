@@ -418,18 +418,13 @@
 								<div class="hero-features-right col-md-6 col-md-offset-3">
 
 									<!-- FORM -->
-									<form name="hero" action="https://app.fra.me/api/create_launchpad_user" method="post" id="form" class="form form-ajax-submit" role="form" redirect-on-success="/confirmation">
+									<form name="hero" action="https://cpanel-staging.mainframe2.com/api/launchpad_user_start_signup" method="post" id="frame-subscribe" class="form form-ajax-submit" role="form">
 
 										<div class="form-validation alert"></div>
 
 										<div class="form-group">
-											<label for="form-first">First Name</label>
-											<input type="text" name="first_name" id="form-first" class="form-control" placeholder="What to call you" autocomplete="off">
-										</div>
-
-										<div class="form-group">
-											<label for="form-first">Last Name</label>
-											<input type="text" name="last_name" id="form-last" class="form-control" placeholder="(optional)" autocomplete="off">
+											<label for="form-name">Name</label>
+											<input type="text" name="name" id="form-name" class="form-control" placeholder="What to call you" autocomplete="off">
 										</div>
 
 										<div class="form-group">
@@ -438,16 +433,12 @@
 										</div>
 
 										<div class="form-group">
-											<label for="form-password">Create a *New* Password</label>
-											<input type="password" name="password" id="form-email" class="form-control" autocomplete="off">
-										</div>
-
-										<div class="form-group">
 											<label for="form-location">Which City Is Closest To You?</label>
-											<select name="hash" id="form-location" class="form-control" placeholder="Your Location" autocomplete="off">
+											<select name="auth" id="form-location" class="form-control" placeholder="Your Location" autocomplete="off">
 												<option value="601fc8374f8ddd7d4ff273e7f14a953b" selected>San Francisco</option>
 												<option value="631ed6bec71718436e89e67aabfa954d">Dublin</option>
 												<option value="6385b350559263cb8fddc2f7fdbd8520">New York</option>
+												<option value="e854de1de04ec901db9995c9e53ac2f3">Staging</option>
 											</select>
 										</div>
 
@@ -711,9 +702,28 @@
 
 				<div class="container">
 
-					<h3 class="closing-shout">Ready to start? Take the first step by clicking the button below</h3>
+					<h3 class="closing-shout">Not ready to sign-up but want us to keep you posted? Sign-up for email updates.</h3>
 
-					<div class="closing-buttons" data-animation="tada"><a href="#register" class="anchor-link btn btn-lg btn-primary">Run SL In Your Web Browser</a></div>
+					<div class="row">
+					  <div class="col-md-10 col-md-offset-1">
+
+						<!-- SUBSCRIPTION FORM -->
+						<form name="subscribe" action="//brightcanopy.us10.list-manage.com/subscribe/post?u=93e9930fb2367a3de99021daf&amp;id=13f07dc8ec" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" method="post" id="mc-embedded-subscribe-form" class="subscription-form form-ajax-submit" role="form" novalidate>
+						  <div class="form-validation alert"></div>
+						  <div class="form-group subscription-form-wrapper">
+							<span class="subscription-form-input">
+							  <input type="email" name="EMAIL" id="mce-EMAIL" class="subscribe-form-email form-control form-control-lg" placeholder="Enter your email address" autocomplete="off" required>
+							</span>
+							<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							<div style="position: absolute; left: -5000px;"><input type="text" name="b_93e9930fb2367a3de99021daf_13f07dc8ec" tabindex="-1" value=""></div>
+							<span class="subscription-form-submit">
+							  <button class="btn btn-primary btn-lg" data-loading-text="Done">Notify Me</button>
+							</span>
+						  </div>
+						</form>
+
+					  </div>
+					</div>
 
 				</div>
 

@@ -315,10 +315,10 @@
 
 		/**
 		 * =======================================
-		 * Form AJAX
+		 * Frame AJAX
 		 * =======================================
 		 */
-		$( 'form' ).each( function( i, el ) {
+		$( '#frame-subscribe' ).each( function( i, el ) {
 
 			var $el = $( this );
 
@@ -350,17 +350,20 @@
 
 							// error
 							if ( response.status != 0 ) {
-								$alert.html( 'Email already used. Please try a different email or contact us at <a href="http//help.brightcanopy.com">support@brightcanopy.com</a>' );
+								$alert.html( "Sorry, that didn't work. Please try a different email or contact us at <a href='http//help.brightcanopy.com'>support@brightcanopy.com</a>" );
+								for(var k in response.info) {
+									console.error( "Param: " + k, "Errors: " + response.info[k] );
+								}
+
+								$alert.html( response );
 								$alert.addClass( 'alert-danger' ).fadeIn( 500 );
 							}
 							// success
 							else {
 								$el.trigger( 'reset' );
-								$alert.html( response.message );
+								//$alert.html( response.info );
 								$alert.addClass( 'alert-success' ).fadeIn( 500 );
-								if ( $el.is('[redirect-on-success]' ) ) {
-									window.location.replace( $el.attr('redirect-on-success') );
-								}
+								window.location.replace( response.info.url + "?code=bright10" );							
 							}
 							// reset button
 							if ( $el.hasClass( 'form-reset' ) ) {
@@ -372,6 +375,60 @@
 			};
 		});
 
+		/**
+		 * =======================================
+		 * Mailchimp AJAX
+		 * =======================================
+		 */
+		$( '#mc-embedded-subscribe-form' ).each( function( i, el ) {
+
+			var $el = $( this );
+
+			if ( $el.hasClass( 'form-ajax-submit' ) ) {
+
+				$el.on( 'submit', function( e ) {
+					e.preventDefault();
+
+					var $alert = $el.find( '.form-validation' ),
+						$submit = $el.find( 'button' ),
+						action = $el.attr( 'action' );
+
+					// button loading
+					$submit.button( 'loading' );
+
+					// reset alert
+					$alert.removeClass( 'alert-danger alert-success' );
+					$alert.html( '' );
+
+					$.ajax({
+						type     : 'POST',
+						url      : action,
+						data     : $el.serialize() + '&ajax=1',
+						dataType : 'JSON',
+						success  : function( response ) {
+
+							// custom callback
+							$el.trigger( 'form-ajax-response', response );
+							
+							// error
+							if ( response.error ) {
+								$alert.html( response.message );
+								$alert.addClass( 'alert-danger' ).fadeIn( 500 );
+							}
+							// success
+							else {
+								$el.trigger( 'reset' );
+								$alert.html( response.message );
+								$alert.addClass( 'alert-success' ).fadeIn( 500 );
+							}
+
+							// reset button
+							$submit.button( 'reset' );
+						},
+					})
+				});
+			};
+		});
 
 		/* =======================================
 		 * Preloader
