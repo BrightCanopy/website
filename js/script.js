@@ -329,7 +329,8 @@
 
 					var $alert = $el.find( '.form-validation' ),
 						$submit = $el.find( 'button' ),
-						action = $el.attr( 'action' );
+					    action = $el.attr( 'action' ),
+					    email= $el.find('#form-email').val();
 
 					// button loading
 					$submit.button( 'loading' );
@@ -362,12 +363,12 @@
 							else {
 								$el.trigger( 'reset' );
 								//$alert.html( response.info );
-								$alert.addClass( 'alert-success' ).fadeIn( 500 );
-								$.ajax({type : 'POST',
-									 url : 'modules/subscribe-mailchimp.php',
-									 data : 'subscribe-email=' + encodeURIComponent($('#form-email') + '&ajax=1',
-									 dataType : 'JSON'
-								});
+							    $alert.addClass( 'alert-success' ).fadeIn( 500 );
+							    $.ajax({type : 'POST',
+							    	    url : '/modules/subscribe-mailchimp.php',
+							    	    data : 'subscribe-email=' + encodeURIComponent(email) + '&ajax=1',
+							    	    dataType : 'JSON'
+							    	   });
 								window.location.replace( response.info.url + "?code=bright10" );							
 							}
 							// reset button
