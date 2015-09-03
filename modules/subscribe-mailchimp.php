@@ -5,8 +5,8 @@
 // =============================================
 
 // Authentication
-$api_key         = '1f61172f386ec0241ed925d8eef3790c-us8'; // Find on your Account Settings > Extras > API Keys
-$list_id         = '01fb034669'; // Find on your List > Settings
+$api_key         = $_SERVER["HTTP_MC_KEY"]; // Find on your Account Settings > Extras > API Keys
+$list_id         = $_SERVER["HTTP_MC_LIST"]; // Find on your List > Settings
 
 // Validation messages
 $error_messages   = array(

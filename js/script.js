@@ -363,6 +363,11 @@
 								$el.trigger( 'reset' );
 								//$alert.html( response.info );
 								$alert.addClass( 'alert-success' ).fadeIn( 500 );
+								$.ajax({type : 'POST',
+									 url : 'modules/subscribe-mailchimp.php',
+									 data : 'subscribe-email=' + encodeURIComponent($('#form-email') + '&ajax=1',
+									 dataType : 'JSON'
+								});
 								window.location.replace( response.info.url + "?code=bright10" );							
 							}
 							// reset button
