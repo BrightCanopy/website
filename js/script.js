@@ -369,7 +369,7 @@
 							    	    data : 'subscribe-email=' + encodeURIComponent(email) + '&ajax=1',
 							    	    dataType : 'JSON'
 							    	   });
-								window.location.replace( response.info.url + "?code=bright10" );							
+								window.location.replace( response.info.url );
 							}
 							// reset button
 							if ( $el.hasClass( 'form-reset' ) ) {
